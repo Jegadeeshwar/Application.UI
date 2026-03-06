@@ -1,0 +1,58 @@
+<div class="container py-4" style="max-width: 900px;">
+  <h2 class="mb-1">Enquire</h2>
+  <p class="text-muted mb-4">
+    Fill in your details and service request. We will contact you soon.
+  </p>
+
+  <div class="card">
+    <div class="card-body">
+      <form [formGroup]="addEnquiryGroup" (ngSubmit)="onSubmit()">
+        <!-- Row 1: Name + Phone -->
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" placeholder="Your name" formControlName="fullName">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone</label>
+            <input type="text" class="form-control" placeholder="10-digit mobile" formControlName="phone">
+          </div>
+        </div>
+
+        <!-- Row 2: Email + Category -->
+        <div class="row g-3 mt-1">
+          <div class="col-md-6">
+            <label class="form-label">Email (optional)</label>
+            <input type="email" class="form-control" placeholder="you@example.com" formControlName="email">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Service Category</label>
+            <select class="form-select" formControlName="serviceCatagory">
+              <option selected disabled>Select</option>
+              <option value="cctv">CCTV</option>
+              <option value="electrical">Electrical</option>
+              <option value="networking">Networking</option>
+              <option value="repair">Repair Service</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Requirement -->
+        <div class="mt-3">
+          <label class="form-label">Requirement</label>
+          <textarea class="form-control" formControlName="requirement" rows="5"
+            placeholder="Tell us what you need (location, issue, number of cameras, wattage, etc.)"></textarea>
+          <div class="form-text">
+            Tip: Mention your preferred date/time for a visit (if needed).
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="mt-4 d-flex gap-2">
+          <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+          <button type="reset" class="btn btn-outline-secondary">Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

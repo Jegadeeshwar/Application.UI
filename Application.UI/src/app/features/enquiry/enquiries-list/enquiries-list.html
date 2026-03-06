@@ -1,0 +1,166 @@
+<div class="container py-4">
+  <h2 class="mb-3">Enquiries List</h2>
+
+  <div class="table-responsive">
+    <table class="table align-middle">
+      <thead class="table-light">
+        <tr>
+          <th style="width:80px;">S.No</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th>Service</th>
+          <th>Description</th>
+          <th style="width:260px;">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- Static mock rows (pure UI). Replace with *ngFor when you wire data. -->
+        <tr>
+          <td>1</td>
+          <td>Cristiano Ronaldo</td>
+          <td><a href="tel:9876543210">9876543210</a></td>
+          <td>Portugal</td>
+          <td>CCTV Installation</td>
+          <td>N/A</td>
+          <td>
+            <div class="btn-group btn-group-sm" role="group">
+              <!-- Reject opens a confirm modal -->
+              <button
+                class="btn btn-outline-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#rejectModal"
+              >
+                <i class="bi bi-x-circle me-1"></i> Reject
+              </button>
+
+              <!-- Schedule opens a form modal -->
+              <button
+                class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#scheduleModal"
+              >
+                <i class="bi bi-calendar-check me-1"></i> Schedule
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>Neymar JR</td>
+          <td><a href="tel:9000000000">9000000000</a></td>
+          <td>Brazil</td>
+          <td>Solar Pannel</td>
+          <td>Need the Service</td>
+          <td>
+            <div class="btn-group btn-group-sm" role="group">
+              <button
+                class="btn btn-outline-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#rejectModal"
+              >
+                <i class="bi bi-x-circle me-1"></i> Reject
+              </button>
+              <button
+                class="btn btn-success"
+                data-bs-toggle="modal"
+                data-bs-target="#scheduleModal"
+              >
+                <i class="bi bi-calendar-check me-1"></i> Schedule
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Empty state row -->
+        <!--
+        <tr>
+          <td colspan="6" class="text-center text-muted py-4">
+            No enquiries found.
+          </td>
+        </tr>
+        -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Reject Confirmation Modal (UI only) -->
+<div
+  class="modal fade"
+  id="rejectModal"
+  tabindex="-1"
+  aria-labelledby="rejectModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rejectModalLabel">Reject Enquiry</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <p class="mb-2">Are you sure you want to reject this enquiry?</p>
+        <label class="form-label">Reason (optional)</label>
+        <textarea class="form-control" rows="3" placeholder="Add a note..."></textarea>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          Reject
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Schedule Appointment Modal (UI only) -->
+<div
+  class="modal fade"
+  id="scheduleModal"
+  tabindex="-1"
+  aria-labelledby="scheduleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="scheduleModalLabel">Schedule Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- You can show selected enquiry info here when you wire it -->
+        <div class="mb-2 small text-muted">
+          <strong>Enquiry:</strong> (Name) — (Phone)
+        </div>
+
+        <div class="row g-3">
+          <div class="col-12">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="col-12">
+            <label class="form-label">Time</label>
+            <input type="time" class="form-control" />
+          </div>
+          <div class="col-12">
+            <label class="form-label">Notes (optional)</label>
+            <textarea class="form-control" rows="3" placeholder="Any extra info…"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Create Appointment
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,205 @@
+<div class="container py-4">
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h2 class="mb-0">Appointments List</h2>
+
+    <!-- Quick filter (UI only) -->
+    <div class="d-flex gap-2">
+      <div class="input-group input-group-sm" style="width: 260px;">
+        <span class="input-group-text bg-light border-end-0"><i class="bi bi-search"></i></span>
+        <input type="text" class="form-control border-start-0" placeholder="Search name / phone…" />
+      </div>
+
+      <select class="form-select form-select-sm" style="width: 160px;">
+        <option value="">All Status</option>
+        <option>Scheduled</option>
+        <option>Rescheduled</option>
+        <option>Done</option>
+        <option>Canceled</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table align-middle">
+      <thead class="table-light">
+        <tr>
+          <th style="width:90px;">S.No</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Date / Time</th>
+          <th>Notes</th>
+          <th style="width:140px;">Status</th>
+          <th style="width:260px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Mock Rows (replace with *ngFor) -->
+        <tr>
+          <td>1</td>
+          <td>Cristiano Ronaldo</td>
+          <td><a href="tel:9876543210">9876543210</a></td>
+          <td>2026-03-04 &middot; 10:30 AM</td>
+          <td>CCTV Installation</td>
+          <td>
+            <span class="badge rounded-pill text-bg-primary">Scheduled</span>
+          </td>
+          <td>
+            <div class="btn-group btn-group-sm" role="group">
+              <button class="btn btn-outline-primary"
+                      data-bs-toggle="modal" data-bs-target="#rescheduleModal">
+                <i class="bi bi-calendar-event me-1"></i> Reschedule
+              </button>
+              <button class="btn btn-success">
+                <i class="bi bi-check2-circle me-1"></i> Done
+              </button>
+              <button class="btn btn-outline-danger"
+                      data-bs-toggle="modal" data-bs-target="#cancelModal">
+                <i class="bi bi-x-circle me-1"></i> Cancel
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>Neymar JR</td>
+          <td><a href="tel:9000000000">9000000000</a></td>
+          <td>2026-03-05 &middot; 04:00 PM</td>
+          <td>Need the Service</td>
+          <td>
+            <span class="badge rounded-pill text-bg-warning">Rescheduled</span>
+          </td>
+          <td>
+            <div class="btn-group btn-group-sm" role="group">
+              <button class="btn btn-outline-primary"
+                      data-bs-toggle="modal" data-bs-target="#rescheduleModal">
+                <i class="bi bi-calendar-event me-1"></i> Reschedule
+              </button>
+              <button class="btn btn-success">
+                <i class="bi bi-check2-circle me-1"></i> Done
+              </button>
+              <button class="btn btn-outline-danger"
+                      data-bs-toggle="modal" data-bs-target="#cancelModal">
+                <i class="bi bi-x-circle me-1"></i> Cancel
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td>Monkey D Luffy</td>
+          <td><a href="tel:9123456789">9123456789</a></td>
+          <td>2026-03-01 &middot; 11:00 AM</td>
+          <td>Service</td>
+          <td>
+            <span class="badge rounded-pill text-bg-success">Done</span>
+          </td>
+          <td>
+            <div class="btn-group btn-group-sm" role="group">
+              <button class="btn btn-outline-primary" disabled>
+                <i class="bi bi-calendar-event me-1"></i> Reschedule
+              </button>
+              <button class="btn btn-success" disabled>
+                <i class="bi bi-check2-circle me-1"></i> Done
+              </button>
+              <button class="btn btn-outline-danger" disabled>
+                <i class="bi bi-x-circle me-1"></i> Cancel
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td>Roronoa Zoro</td>
+          <td><a href="tel:9555512345">9555512345</a></td>
+          <td>2026-03-02 &middot; 02:30 PM</td>
+          <td>Solar Pannel Installation</td>
+          <td>
+            <span class="badge rounded-pill text-bg-secondary">Canceled</span>
+          </td>
+          <td>
+            <div class="btn-group btn-group-sm" role="group">
+              <button class="btn btn-outline-primary" disabled>
+                <i class="bi bi-calendar-event me-1"></i> Reschedule
+              </button>
+              <button class="btn btn-success" disabled>
+                <i class="bi bi-check2-circle me-1"></i> Done
+              </button>
+              <button class="btn btn-outline-danger" disabled>
+                <i class="bi bi-x-circle me-1"></i> Cancel
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Empty state -->
+        <!--
+        <tr>
+          <td colspan="7" class="text-center text-muted py-4">
+            No appointments found.
+          </td>
+        </tr>
+        -->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Reschedule Modal (UI only) -->
+<div class="modal fade" id="rescheduleModal" tabindex="-1" aria-labelledby="rescheduleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rescheduleModalLabel">Reschedule Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Show selected appointment details here when wiring -->
+        <div class="mb-2 small text-muted">
+          <strong>Patient:</strong> (Name) — (Phone)
+        </div>
+        <div class="row g-3">
+          <div class="col-12">
+            <label class="form-label">New Date</label>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="col-12">
+            <label class="form-label">New Time</label>
+            <input type="time" class="form-control" />
+          </div>
+          <div class="col-12">
+            <label class="form-label">Notes (optional)</label>
+            <textarea class="form-control" rows="3" placeholder="Reason / extra info…"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+        <button class="btn btn-primary" data-bs-dismiss="modal">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cancel Confirmation Modal (UI only) -->
+<div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cancelModalLabel">Cancel Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-2">Are you sure you want to cancel this appointment?</p>
+        <label class="form-label">Reason (optional)</label>
+        <textarea class="form-control" rows="3" placeholder="Add a reason…"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" data-bs-dismiss="modal">No, Keep</button>
+        <button class="btn btn-danger" data-bs-dismiss="modal">Yes, Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
