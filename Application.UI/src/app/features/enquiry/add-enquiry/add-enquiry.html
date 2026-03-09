@@ -12,10 +12,19 @@
           <div class="col-md-6">
             <label class="form-label">Full Name</label>
             <input type="text" class="form-control" placeholder="Your name" formControlName="fullName">
+            @if (validFullName.touched && validFullName.hasError("required")){
+            <p class="text-danger small">Please enter a value</p>
+            }
           </div>
           <div class="col-md-6">
             <label class="form-label">Phone</label>
             <input type="text" class="form-control" placeholder="10-digit mobile" formControlName="phone">
+            @if (validPhone.touched && validPhone.hasError("required")){
+            <p class="text-danger small">Please enter a value</p>
+            }
+            @if (validPhone.touched && validPhone.hasError("maxlength")){
+            <p class="text-danger small">Phone number must contain 10 digits</p>
+            }
           </div>
         </div>
 

@@ -16,8 +16,9 @@
         <option>Done</option>
         <option>Canceled</option>
       </select>
-    </div>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scheduleModal">Add Appointment</button>
   </div>
+    </div>
 
   <div class="table-responsive">
     <table class="table align-middle">
@@ -199,6 +200,53 @@
       <div class="modal-footer">
         <button class="btn btn-outline-secondary" data-bs-dismiss="modal">No, Keep</button>
         <button class="btn btn-danger" data-bs-dismiss="modal">Yes, Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Schedule Appointment Modal (UI only) -->
+<div
+  class="modal fade"
+  id="scheduleModal"
+  tabindex="-1"
+  aria-labelledby="scheduleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="scheduleModalLabel">Schedule Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- You can show selected enquiry info here when you wire it -->
+        <div class="mb-2 small text-muted">
+          <strong>Enquiry:</strong> (Name) — (Phone)
+        </div>
+
+        <div class="row g-3">
+          <div class="col-12">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="col-12">
+            <label class="form-label">Time</label>
+            <input type="time" class="form-control" />
+          </div>
+          <div class="col-12">
+            <label class="form-label">Notes (optional)</label>
+            <textarea class="form-control" rows="3" placeholder="Any extra info…"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+          Create Appointment
+        </button>
       </div>
     </div>
   </div>
