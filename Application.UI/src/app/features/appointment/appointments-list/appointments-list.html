@@ -16,9 +16,9 @@
         <option>Done</option>
         <option>Canceled</option>
       </select>
-    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scheduleModal">Add Appointment</button>
-  </div>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scheduleModal">Add Appointment</button>
     </div>
+  </div>
 
   <div class="table-responsive">
     <table class="table align-middle">
@@ -46,15 +46,13 @@
           </td>
           <td>
             <div class="btn-group btn-group-sm" role="group">
-              <button class="btn btn-outline-primary"
-                      data-bs-toggle="modal" data-bs-target="#rescheduleModal">
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#rescheduleModal">
                 <i class="bi bi-calendar-event me-1"></i> Reschedule
               </button>
               <button class="btn btn-success">
                 <i class="bi bi-check2-circle me-1"></i> Done
               </button>
-              <button class="btn btn-outline-danger"
-                      data-bs-toggle="modal" data-bs-target="#cancelModal">
+              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelModal">
                 <i class="bi bi-x-circle me-1"></i> Cancel
               </button>
             </div>
@@ -72,15 +70,13 @@
           </td>
           <td>
             <div class="btn-group btn-group-sm" role="group">
-              <button class="btn btn-outline-primary"
-                      data-bs-toggle="modal" data-bs-target="#rescheduleModal">
+              <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#rescheduleModal">
                 <i class="bi bi-calendar-event me-1"></i> Reschedule
               </button>
               <button class="btn btn-success">
                 <i class="bi bi-check2-circle me-1"></i> Done
               </button>
-              <button class="btn btn-outline-danger"
-                      data-bs-toggle="modal" data-bs-target="#cancelModal">
+              <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#cancelModal">
                 <i class="bi bi-x-circle me-1"></i> Cancel
               </button>
             </div>
@@ -206,13 +202,7 @@
 </div>
 
 <!-- Schedule Appointment Modal (UI only) -->
-<div
-  class="modal fade"
-  id="scheduleModal"
-  tabindex="-1"
-  aria-labelledby="scheduleModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" id="scheduleModal" tabindex="-1" aria-labelledby="scheduleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
@@ -222,16 +212,21 @@
 
       <div class="modal-body">
         <!-- You can show selected enquiry info here when you wire it -->
-        <div class="mb-2 small text-muted">
-          <strong>Enquiry:</strong> (Name) — (Phone)
-        </div>
-
         <div class="row g-3">
           <div class="col-12">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-control" placeholder="Your name">
+          </div>
+          <div class="col-12">
+            <label class="form-label">Phone</label>
+            <input type="text" class="form-control" placeholder="10-digit mobile">
+          </div>
+
+          <div class="col-6">
             <label class="form-label">Date</label>
             <input type="date" class="form-control" />
           </div>
-          <div class="col-12">
+          <div class="col-6">
             <label class="form-label">Time</label>
             <input type="time" class="form-control" />
           </div>
