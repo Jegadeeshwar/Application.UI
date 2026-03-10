@@ -52,11 +52,11 @@ get validRequirement(){
     const addEnquiryFormValues = this.addEnquiryGroup.getRawValue();
 
     const addEnquiryRequestDto: AddEnquiryModel = {
-      fullName: addEnquiryFormValues.fullName,
-      phone: addEnquiryFormValues.phone,
-      email: addEnquiryFormValues.email,
-      serviceCatagory: addEnquiryFormValues.serviceCatagory,
-      requirement: addEnquiryFormValues.requirement
+      CustomerName: addEnquiryFormValues.fullName,
+      CustomerPhone: addEnquiryFormValues.phone,
+      CustomerEmail: addEnquiryFormValues.email,
+      Service: addEnquiryFormValues.serviceCatagory,
+      Message: addEnquiryFormValues.requirement
     }
     this.enquiryService.addEnquiry(addEnquiryRequestDto);
   }
